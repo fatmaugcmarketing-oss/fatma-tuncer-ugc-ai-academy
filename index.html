@@ -1,104 +1,608 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>UGC&Aİ Collaby Academy</title>
+<title>UGC&Aİ Collaby Academy | Fatma Tuncer</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #080914;
-      color: white;
-      line-height: 1.6;
-    }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #080914;
+  color: white;
+  line-height: 1.6;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
-    }
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    /* NAVBAR */
+/* NAVBAR */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8, 9, 20, 0.94);
+  border-bottom: 1px solid #25273a;
+  backdrop-filter: blur(10px);
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(8, 9, 20, 0.92);
-      border-bottom: 1px solid #25273a;
-      backdrop-filter: blur(10px);
-    }
+nav {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
 
-    nav {
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+}
 
-    .logo {
-      font-size: 18px;
-      font-weight: bold;
-    }
+.logo span {
+  color: #a855f7;
+}
 
-    .logo span {
-      color: #a855f7;
-    }
+.menu {
+  display: flex;
+  gap: 24px;
+  color: #b8bbca;
+  font-size: 14px;
+}
 
-    .menu {
-      display: flex;
-      gap: 24px;
-      color: #b8bbca;
-      font-size: 14px;
-    }
+.menu a:hover {
+  color: white;
+}
 
-    .menu a:hover {
-      color: white;
-    }
+/* BUTTON */
+.button {
+  display: inline-block;
+  padding: 13px 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white;
+  font-weight: bold;
+}
 
-    /* BUTTON */
+/* HERO */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(139, 92, 246, 0.25),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(236, 72, 153, 0.15),
+      transparent 35%
+    );
+}
 
-    .button {
-      display: inline-block;
-      padding: 13px 20px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #8b5cf6, #ec4899);
-      color: white;
-      font-weight: bold;
-    }
+.hero-content {
+  max-width: 760px;
+}
 
-    /* HERO */
+.badge {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid #393b55;
+  border-radius: 30px;
+  color: #c4b5fd;
+  margin-bottom: 22px;
+  font-size: 14px;
+}
 
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      padding: 80px 0;
-      background:
-        radial-gradient(
-          circle at 20% 20%,
-          rgba(139, 92, 246, 0.25),
-          transparent 35%
-        ),
-        radial-gradient(
-          circle at 80% 30%,
-          rgba(236, 72, 153, 0.15),
-          transparent 
+h1 {
+  font-size: clamp(40px, 8vw, 78px);
+  line-height: 1.05;
+  margin-bottom: 25px;
+}
+
+.gradient {
+  background: linear-gradient(135deg, #c084fc, #f472b6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 650px;
+  color: #b8bbca;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.secondary {
+  padding: 13px 20px;
+  border: 1px solid #3b3d54;
+  border-radius: 12px;
+  color: #ddd;
+}
+
+/* SECTIONS */
+section {
+  padding: 90px 0;
+}
+
+.section-title {
+  font-size: 38px;
+  margin-bottom: 18px;
+}
+
+.section-text {
+  color: #aeb1c1;
+  max-width: 700px;
+  margin-bottom: 25px;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.photo {
+  min-height: 330px;
+  border-radius: 24px;
+  border: 1px solid #303249;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139, 92, 246, 0.25),
+      rgba(236, 72, 153, 0.12)
+    ),
+    #111321;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #aeb1c1;
+  padding: 30px;
+}
+
+/* ACADEMY */
+.academy {
+  border-top: 1px solid #222438;
+  border-bottom: 1px solid #222438;
+  background: #0d0f1d;
+}
+
+/* TRAININGS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  padding: 28px;
+  border: 1px solid #2d3044;
+  border-radius: 20px;
+  background: #101221;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #7651d6;
+}
+
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #aeb1c1;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+}
+
+.cta-box {
+  padding: 55px 25px;
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(139, 92, 246, 0.25),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(236, 72, 153, 0.18),
+      transparent 40%
+    ),
+    #111321;
+  border: 1px solid #303249;
+}
+
+.cta-box p {
+  color: #b8bbca;
+  margin: 15px auto 25px;
+  max-width: 650px;
+}
+
+/* FOOTER */
+footer {
+  padding: 30px 0;
+  border-top: 1px solid #25273a;
+  color: #85899d;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+
+  .menu {
+    display: none;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 100px 0 80px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+
+      <div class="logo">
+        UGC<span>&Aİ</span> Collaby Academy
+      </div>
+
+      <div class="menu">
+        <a href="#about">Hakkımda</a>
+        <a href="#academy">Academy</a>
+        <a href="#trainings">Eğitimler</a>
+      </div>
+
+      <a class="button" href="#contact">
+        İletişim
+      </a>
+
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="badge">
+        UGC&Aİ Collaby Academy
+      </div>
+
+      <h1>
+        Öğrenmenin beni
+        <span class="gradient">farklı yerlere</span>
+        taşıdığı bir yolculuk.
+      </h1>
+
+      <p>
+        Ben Fatma Tuncer. Academy çatısı altında farklı
+        alanlarda öğrenmeye, üretmeye ve kendimi geliştirmeye
+        devam ediyorum.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a class="button" href="#about">
+          Hikâyemi Keşfet
+        </a>
+
+        <a class="secondary" href="#trainings">
+          Eğitim Alanları
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+  <div class="container">
+
+    <div class="about-grid">
+
+      <div class="photo">
+        <div>
+          <strong>Fotoğraf Alanı</strong>
+          <br><br>
+          Buraya daha sonra kişisel fotoğraf eklenebilir.
+        </div>
+      </div>
+
+      <div>
+
+        <h2 class="section-title">
+          Merhaba, ben Fatma.
+        </h2>
+
+        <p class="section-text">
+          40 yaşındayım ve yaklaşık 1 yıldır yapay zekâ ile
+          ilgileniyorum.
+        </p>
+
+        <p class="section-text">
+          Academy'de öğrendiklerim beni çok farklı yerlere
+          taşıdı. Sosyal medya yönetimi, animasyon ve farklı
+          alanlarda eğitimler aldım.
+        </p>
+
+        <p class="section-text">
+          Bu öğrenme yolculuğunun bir parçası olmaktan
+          mutluyum.
+        </p>
+
+        <a class="button" href="#academy">
+          Academy'yi Keşfet
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ACADEMY -->
+<section id="academy" class="academy">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      UGC&Aİ Collaby Academy
+    </h2>
+
+    <p class="section-text">
+      Farklı alanlarda öğrenme ve üretme deneyimimin bir
+      parçası olan Academy yolculuğu.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- TRAININGS -->
+<section id="trainings">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Eğitim Alanları
+    </h2>
+
+    <p class="section-text">
+      Academy kapsamında çalıştığım ve eğitim aldığım
+      alanlardan bazıları:
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <div class="card-icon">
+          🎨
+        </div>
+
+        <h3>
+          Photoshop
+        </h3>
+
+        <p>
+          Görsel tasarım ve dijital içerik çalışmalarına
+          yönelik öğrenme alanı.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+          🌐
+        </div>
+
+        <h3>
+          Web Tasarım
+        </h3>
+
+        <p>
+          Web dünyasını ve dijital sayfa tasarımını
+          keşfetme alanı.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+          📱
+        </div>
+
+        <h3>
+          Sosyal Medya Yönetimi
+        </h3>
+
+        <p>
+          Sosyal medya içerikleri ve dijital iletişim
+          üzerine çalışmalar.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+          🤖
+        </div>
+
+        <h3>
+          Yapay Zekâ
+        </h3>
+
+        <p>
+          Yaklaşık 1 yıldır ilgilendiğim ve öğrenmeye devam
+          ettiğim alan.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+          🎬
+        </div>
+
+        <h3>
+          Animasyon
+        </h3>
+
+        <p>
+          Hareketli içerik ve animasyon çalışmalarına
+          yönelik öğrenme alanı.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+          ✨
+        </div>
+
+        <h3>
+          Diğer Eğitimler
+        </h3>
+
+        <p>
+          Academy içerisinde yer alan diğer öğrenme ve
+          gelişim alanları.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+<section id="contact" class="cta">
+
+  <div class="container">
+
+    <div class="cta-box">
+
+      <h2 class="section-title">
+        Öğrenmeye devam ediyorum.
+      </h2>
+
+      <p>
+        Bu site, benim Academy yolculuğumu ve öğrendiğim
+        alanları anlatan kişisel bir başlangıç noktası.
+      </p>
+
+      <a class="button" href="#about">
+        Yolculuğuma Bak
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+  UGC&Aİ Collaby Academy · Fatma Tuncer
+</footer>
+
+</body>
+</html>
